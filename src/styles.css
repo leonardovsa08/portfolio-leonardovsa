@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+  }
+
+  .typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+  
+    /* ESSENCIAL */
+    width: 0;
+    display: inline-block;
+  
+    /* Fonte monoespaçada melhora MUITO o efeito */
+    font-family: monospace;
+  
+    /* Aqui você controla baseado no número de caracteres */
+    animation: typing 2.5s steps(20) forwards;
+  }
+  
+  .cursor {
+    margin-left: 2px;
+    animation: blink 0.8s infinite;
+  }
+  
+  /* Digitação baseada em caracteres (ch) */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 20ch; /* tem que bater com o número de letras */
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .timeline-line {
+    animation: timelineGlow 5s ease-in-out infinite;
+  }
+
+  @keyframes lightMove {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  .line-light {
+    position: relative;
+    height: 1px; /* aqui é a linha */
+    background: rgba(223, 93, 7, 0.2);
+    overflow: hidden;
+  }
+  .line-light::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  
+    background: linear-gradient(
+      90deg, /* IMPORTANTE: direção da linha */
+      transparent 0%,
+      transparent 40%,
+      rgba(223, 93, 7, 1) 50%,
+      transparent 60%,
+      transparent 100%
+    );
+  
+    background-size: 200% 100%;
+    animation: lightMove 3s linear infinite;
+  
+    pointer-events: none;
+  }
+
+  /* animação da luz */
+@keyframes borderLightMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* base da forma */
+.border-light {
+  position: absolute;
+}
+
+/* camada da luz */
+.border-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* espessura da borda */
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(223, 93, 7, 0.8) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+
+  background-size: 200% 100%;
+  animation: borderLightMove 4s linear infinite;
+
+ 
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+  
+
+/* GLOW ANIMADO */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(223, 93, 7, 0.8) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+  animation: lightMove 3s linear infinite;
+}

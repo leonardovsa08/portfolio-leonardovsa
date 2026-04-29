@@ -1,0 +1,176 @@
+<header
+  class="fixed top-0 left-0 w-full h-20 md:h-24 z-50 bg-background-dark/50 backdrop-blur-md "
+  [style.--header-height]="'5rem'"
+>
+  <div class="relative z-10 h-full w-full flex items-center">
+    <div class="w-full max-w-7xl mx-auto flex items-center justify-between md:px-20 px-6">
+
+      <!-- Logo -->
+      <div class="flex items-center shrink-0 rounded-lg">
+        <a routerLink="/" class="relative group flex items-center gap-3">
+          <span class="material-symbols-rounded text-[1.65rem] text-primary font-bold">code</span>
+          <span class="text-primary font-bold text-[1.65rem]">leonardo.vsa</span>
+        </a>
+      </div>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-[1rem] font-medium text-white">
+
+                <a href="#banner" class="relative text-white hover:text-primary transition-colors pb-1
+                    after:content-[''] after:absolute after:left-0 after:bottom-0
+                    after:w-0 after:h-[2px] after:bg-primary
+                    after:transition-all after:duration-300
+                    hover:after:w-full">
+                    Início
+                </a>
+
+                <a href="#about" class="relative text-white hover:text-primary transition-colors pb-1
+                    after:content-[''] after:absolute after:left-0 after:bottom-0
+                    after:w-0 after:h-[2px] after:bg-primary
+                    after:transition-all after:duration-300
+                    hover:after:w-full">
+                    Sobre
+                </a>
+
+                <a href="#education" class="relative text-white hover:text-primary transition-colors pb-1
+                    after:content-[''] after:absolute after:left-0 after:bottom-0
+                    after:w-0 after:h-[2px] after:bg-primary
+                    after:transition-all after:duration-300
+                    hover:after:w-full">
+                    Educação
+                </a>
+
+                <a href="#skills" class="relative text-white hover:text-primary transition-colors pb-1
+                    after:content-[''] after:absolute after:left-0 after:bottom-0
+                    after:w-0 after:h-[2px] after:bg-primary
+                    after:transition-all after:duration-300
+                    hover:after:w-full">
+                    Especialidades
+                </a>
+
+                <a href="#projects" class="relative text-white hover:text-primary transition-colors pb-1
+                    after:content-[''] after:absolute after:left-0 after:bottom-0
+                    after:w-0 after:h-[2px] after:bg-primary
+                    after:transition-all after:duration-300
+                    hover:after:w-full">
+                    Projetos
+                </a>
+
+                <a href="#contact" class="relative text-white hover:text-primary transition-colors pb-1
+                    after:content-[''] after:absolute after:left-0 after:bottom-0
+                    after:w-0 after:h-[2px] after:bg-primary
+                    after:transition-all after:duration-300
+                    hover:after:w-full">
+                    Contato
+                </a>
+
+
+
+            </nav>
+
+            <!-- Mobile Button -->
+      <div class="md:hidden flex items-center">
+        <button
+          (click)="toggleMenu()"
+          class="text-slate-300 hover:text-white p-2 rounded-md transition-colors"
+          aria-label="Abrir menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  @if(isMenuOpen){
+    <div
+      class="fixed inset-0 z-40 md:hidden
+      bg-black/40 backdrop-blur-sm
+      transition-all duration-300 ease-out
+      animate-[fadeIn_.3s_ease-out]"
+      (click)="toggleMenu()"
+    ></div>
+  }
+
+  @if(isMenuOpen){
+    <div
+      class="md:hidden fixed left-0 w-full z-50
+      bg-background-dark/95 backdrop-blur-xl
+      border-t border-white/10
+      shadow-2xl
+      transition-all duration-300 ease-out
+      animate-[fadeIn_.3s_ease-out]"
+      style="top: var(--header-height); height: calc(100vh - var(--header-height));"
+    >
+  
+      <div class="flex flex-col justify-center items-center h-full gap-10 px-6">
+  
+        <!-- LINK -->
+        <a (click)="toggleMenu()" href="#banner"
+          class="group relative text-xl font-semibold tracking-wide text-white
+          transition-all duration-300
+          hover:text-primary active:scale-95">
+  
+          Início
+  
+          <span class="absolute -bottom-2 left-1/2 w-0 h-[2px] bg-primary
+            transition-all duration-300
+            group-hover:w-full group-hover:left-0"></span>
+        </a>
+  
+        <a (click)="toggleMenu()" href="#about"
+          class="group relative text-xl font-semibold tracking-wide text-white
+          transition-all duration-300
+          hover:text-primary active:scale-95">
+          Sobre
+          <span class="absolute -bottom-2 left-1/2 w-0 h-[2px] bg-primary
+            transition-all duration-300
+            group-hover:w-full group-hover:left-0"></span>
+        </a>
+  
+        <a (click)="toggleMenu()" href="#skills"
+          class="group relative text-xl font-semibold tracking-wide text-white
+          transition-all duration-300
+          hover:text-primary active:scale-95">
+          Especialidades
+          <span class="absolute -bottom-2 left-1/2 w-0 h-[2px] bg-primary
+            transition-all duration-300
+            group-hover:w-full group-hover:left-0"></span>
+        </a>
+  
+        <a (click)="toggleMenu()" href="#education"
+          class="group relative text-xl font-semibold tracking-wide text-white
+          transition-all duration-300
+          hover:text-primary active:scale-95">
+          Educação
+          <span class="absolute -bottom-2 left-1/2 w-0 h-[2px] bg-primary
+            transition-all duration-300
+            group-hover:w-full group-hover:left-0"></span>
+        </a>
+  
+        <a (click)="toggleMenu()" href="#projects"
+          class="group relative text-xl font-semibold tracking-wide text-white
+          transition-all duration-300
+          hover:text-primary active:scale-95">
+          Projetos
+          <span class="absolute -bottom-2 left-1/2 w-0 h-[2px] bg-primary
+            transition-all duration-300
+            group-hover:w-full group-hover:left-0"></span>
+        </a>
+  
+        <a (click)="toggleMenu()" href="#contact"
+          class="group relative text-xl font-semibold tracking-wide text-white
+          transition-all duration-300
+          hover:text-primary active:scale-95">
+          Contato
+          <span class="absolute -bottom-2 left-1/2 w-0 h-[2px] bg-primary
+            transition-all duration-300
+            group-hover:w-full group-hover:left-0"></span>
+        </a>
+  
+      </div>
+    </div>
+  }
+</header>
