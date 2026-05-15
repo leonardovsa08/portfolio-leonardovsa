@@ -5,10 +5,11 @@ import { AboutComponent } from "./about/about.component";
 import { EducationComponent } from "./education/education.component";
 import { SkillsComponent } from "./skills/skills.component";
 import { ProjectsComponent } from "./projects/projects.component";
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, BannerComponent, AboutComponent, EducationComponent, SkillsComponent, ProjectsComponent],
+  imports: [HeaderComponent, BannerComponent, AboutComponent, EducationComponent, SkillsComponent, ProjectsComponent, ContactComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
