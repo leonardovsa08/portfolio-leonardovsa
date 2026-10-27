@@ -1,0 +1,59 @@
+<section class="relative text-white py-28 overflow-hidden" aria-labelledby="experience-title">
+
+    <div class="absolute inset-0 opacity-[0.05] bg-grid-pattern bg-[size:40px_40px]" aria-hidden="true"></div>
+
+    <div class="relative max-w-7xl mx-auto px-8 lg:px-16">
+
+        <div class="text-center mb-20" data-aos="fade-down" data-aos-duration="1200">
+            <h2 id="experience-title" class="text-4xl md:text-5xl font-bold tracking-wide">
+                Trajetória <span class="text-primary">profissional</span>
+            </h2>
+            <p class="text-gray-400 mt-6 max-w-2xl mx-auto leading-relaxed">
+                O estágio, as interfaces que já estão no ar e a graduação que corre em paralelo.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+            @for (item of experiences; track item.title) {
+                <div [attr.data-aos]="item.aos" data-aos-duration="1500" class="w-full">
+                    <div class="group relative p-8 rounded-2xl
+                        border border-white/5 h-full
+                        bg-surface-dark/30 backdrop-blur-sm hover:bg-background-dark
+                        transition-all duration-500
+                        hover:-translate-y-3
+                        hover:border-primary/40
+                        hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]
+                        overflow-hidden">
+
+                        <div class="pointer-events-none absolute inset-0
+                            opacity-0 group-hover:opacity-100
+                            transition-opacity duration-500 rounded-2xl"
+                            style="background: radial-gradient(circle at top right, rgba(255,90,0,0.25), transparent 70%);">
+                        </div>
+
+                        <div class="w-12 h-12 flex items-center justify-center border border-primary rounded-full text-primary group-hover:bg-primary group-hover:text-black transition duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(255,90,0,0.7)] mb-6">
+                            <span class="material-symbols-rounded text-2xl" aria-hidden="true">{{ item.icon }}</span>
+                        </div>
+
+                        <span class="text-primary text-sm font-semibold tracking-widest uppercase">
+                            {{ item.period }}
+                        </span>
+
+                        <h3 class="text-lg font-semibold mt-2 tracking-wide">
+                            {{ item.title }}
+                        </h3>
+
+                        <p class="text-primary text-xs uppercase tracking-widest mt-2">
+                            {{ item.place }}
+                        </p>
+
+                        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

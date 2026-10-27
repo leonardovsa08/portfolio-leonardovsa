@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { skills } from '../portfolio.data';
 
 @Component({
   selector: 'app-skills',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './skills.component.css'
 })
 export class SkillsComponent {
-
+  readonly skills = skills;
 }

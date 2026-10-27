@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { aboutMoments } from '../portfolio.data';
 
 @Component({
   selector: 'app-about',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-
+  readonly moments = aboutMoments;
 }

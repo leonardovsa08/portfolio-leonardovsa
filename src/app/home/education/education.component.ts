@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { education } from '../portfolio.data';
 
 @Component({
   selector: 'app-education',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './education.component.css'
 })
 export class EducationComponent {
-
+  readonly items = education;
 }

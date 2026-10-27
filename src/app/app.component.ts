@@ -1,7 +1,7 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import * as AOS from 'aos';
-import { filter } from 'rxjs';
+import { filter, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,25 +9,29 @@ import { filter } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
+  private routeSubscription?: Subscription;
 
   constructor(private router: Router) {}
 
   ngAfterViewInit() {
-    // Inicializa o AOS a primeira vez
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     AOS.init({
       duration: 800,
       once: true,
-      easing: 'ease-out-cubic'
+      easing: 'ease-out-cubic',
+      disable: reduceMotion,
     });
 
-    // Atualiza AOS sempre que muda de rota
-    this.router.events
+    this.routeSubscription = this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
-        setTimeout(() => {
-          AOS.refresh();
-        }, 50); // pequeno delay para garantir que o DOM está renderizado
+        setTimeout(() => AOS.refresh(), 50);
       });
+  }
+
+  ngOnDestroy() {
+    this.routeSubscription?.unsubscribe();
   }
 }

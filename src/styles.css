@@ -23,7 +23,7 @@ html, body {
     font-family: monospace;
   
     /* Aqui você controla baseado no número de caracteres */
-    animation: typing 2.5s steps(20) forwards;
+    animation: typing 2.5s steps(17) forwards;
   }
   
   .cursor {
@@ -37,7 +37,7 @@ html, body {
       width: 0;
     }
     to {
-      width: 20ch; /* tem que bater com o número de letras */
+      width: 17ch; /* tem que bater com o número de letras */
     }
   }
   
@@ -154,4 +154,81 @@ html, body {
 .project-card:hover::before {
   opacity: 1;
   animation: lightMove 3s linear infinite;
+}
+
+app-banner,
+app-about,
+app-experience,
+app-education,
+app-skills,
+app-projects,
+app-contact {
+  display: block;
+  scroll-margin-top: 6.5rem;
+}
+
+.project-reveal {
+  opacity: 1;
+}
+
+.project-dim {
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-reveal {
+    opacity: 0;
+  }
+
+  .group:hover .project-reveal,
+  .group:focus-within .project-reveal,
+  .group:hover .project-dim,
+  .group:focus-within .project-dim {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-reveal {
+    opacity: 1;
+    background-image: linear-gradient(to top, rgba(5, 5, 7, 0.96) 0%, rgba(5, 5, 7, 0.9) 48%, rgba(5, 5, 7, 0.62) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .typing-text {
+    width: auto;
+    animation: none !important;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+html {
+  color-scheme: dark;
+  scroll-padding-top: 6.5rem;
+}
+
+:focus-visible {
+  outline: 2px solid #ff5a00;
+  outline-offset: 3px;
 }

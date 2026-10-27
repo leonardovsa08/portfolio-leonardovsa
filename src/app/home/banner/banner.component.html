@@ -1,4 +1,4 @@
-<section class=" text-white py-16 md:py-24 ">
+<section aria-labelledby="banner-title" class=" text-white py-16 md:py-24 ">
     <div class="max-w-7xl mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
         <!-- IMAGEM / LOGO -->
@@ -14,10 +14,10 @@
                         <div class="absolute top-1/2 left-0 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_rgba(255,90,0,1)]"></div>
                     </div>
             
-                    <div class="absolute w-[70%] h-[70%] border border-white/10 rounded-full flex items-center justify-center bg-zinc-900/10 backdrop-blur-md shadow-[inset_0_1px_20px_rgba(255,255,255,0.05)] transition-all duration-500 group-hover/banner:border-primary/30 group-hover/banner:shadow-[0_0_40px_rgba(255,90,0,0.1.5)] z-10">
+                    <div class="absolute w-[70%] h-[70%] border border-white/10 rounded-full flex items-center justify-center bg-zinc-900/10 backdrop-blur-md shadow-[inset_0_1px_20px_rgba(255,255,255,0.05)] transition-all duration-500 group-hover/banner:border-primary/30 group-hover/banner:shadow-[0_0_40px_rgba(255,90,0,0.15)] z-10">
                         
-                        <svg class="w-28 h-28 text-primary opacity-80 group-hover/banner:opacity-100 group-hover/banner:scale-110 transition-all duration-500 ease-out animate-[pulse_3s_ease-in-out_infinite]" 
-                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+                        <svg class="w-28 h-28 text-primary opacity-80 group-hover/banner:opacity-100 group-hover/banner:scale-110 transition-all duration-500 ease-out animate-[pulse_3s_ease-in-out_infinite]"
+                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
                         </svg>
                     </div>
@@ -50,17 +50,17 @@
         <!-- TEXTO -->
         <div class="space-y-5 md:space-y-6 text-center md:text-left">
 
-            <h1 class="text-2xl md:text-3xl font-semibold text-primary 
+            <h1 id="banner-title" class="text-2xl md:text-3xl font-semibold text-primary
                 drop-shadow-[0_0_5px_rgba(255,90,0,0.7)]"
                 data-aos="fade-left" data-aos-duration="1500">
-                Leonardo
+                Leonardo <span class="sr-only">Vasconcelos de Sá</span>
             </h1>
 
-            <h2 class="text-3xl md:text-5xl font-bold text-primary flex"
+            <h2 class="text-3xl md:text-5xl font-bold text-primary flex justify-center md:justify-start"
             data-aos="fade-left" data-aos-duration="1500">
             
             <span class="typing-text">Desenvolvedor Web</span>
-            <span class="cursor">|</span>
+            <span class="cursor" aria-hidden="true">|</span>
         
         </h2>
 
@@ -78,10 +78,10 @@
 
                 <!-- LinkedIn -->
                 <div data-aos="fade-up-left" data-aos-duration="1500">
-                    <a href="https://www.linkedin.com/in/leonardovsa/" target="_blank"
+                    <a [href]="profile.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn, abre em uma nova aba"
                         class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center 
                         border border-primary rounded-full text-primary 
-                        hover:bg-primary hover:text-white transition duration-500 
+                        hover:bg-primary hover:text-black transition duration-500 
                         hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,90,0,0.7)]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-linkedin" viewBox="0 0 16 16">
@@ -93,10 +93,10 @@
 
                 <!-- GitHub -->
                 <div data-aos="fade-up-left" data-aos-duration="1500" data-aos-delay="200">
-                    <a href="https://github.com/leonardovsa08" target="_blank"
+                    <a [href]="profile.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub, abre em uma nova aba"
                         class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center 
                         border border-primary rounded-full text-primary 
-                        hover:bg-primary hover:text-white transition duration-500 
+                        hover:bg-primary hover:text-black transition duration-500 
                         hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,90,0,0.7)]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-github" viewBox="0 0 16 16">
@@ -108,11 +108,10 @@
 
                 <!-- WhatsApp -->
                 <div data-aos="fade-up-left" data-aos-duration="1500" data-aos-delay="400">
-                    <a href="https://wa.me/5518996239916?text=Olá%20Leonardo,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
-                        target="_blank"
+                    <a [href]="profile.whatsappIntro" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp, abre em uma nova aba"
                         class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center 
                         border border-primary rounded-full text-primary 
-                        hover:bg-primary hover:text-white transition duration-500 
+                        hover:bg-primary hover:text-black transition duration-500 
                         hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,90,0,0.7)]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-whatsapp" viewBox="0 0 16 16">
@@ -124,10 +123,10 @@
 
                 <!-- Email -->
                 <div data-aos="fade-up-left" data-aos-duration="1500" data-aos-delay="600">
-                    <a href="https://mail.google.com/mail/?view=cm&to=leonardovasconcelosdesa@gmail.com" target="_blank"
+                    <a [href]="'mailto:' + profile.email" aria-label="E-mail"
                         class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center 
                         border border-primary rounded-full text-primary 
-                        hover:bg-primary hover:text-white transition duration-500 
+                        hover:bg-primary hover:text-black transition duration-500 
                         hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,90,0,0.7)]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-envelope" viewBox="0 0 16 16">

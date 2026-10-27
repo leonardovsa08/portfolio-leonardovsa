@@ -6,11 +6,12 @@ import { EducationComponent } from "./education/education.component";
 import { SkillsComponent } from "./skills/skills.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { ContactComponent } from './contact/contact.component';
+import { ExperienceComponent } from './experience/experience.component';
 import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, BannerComponent, AboutComponent, EducationComponent, SkillsComponent, ProjectsComponent, ContactComponent, FooterComponent],
+  imports: [HeaderComponent, BannerComponent, AboutComponent, ExperienceComponent, EducationComponent, SkillsComponent, ProjectsComponent, ContactComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
